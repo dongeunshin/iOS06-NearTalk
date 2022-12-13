@@ -374,6 +374,15 @@ extension DefaultChatViewModel {
                     return
                 }
                 self.fetchMessages(before: message, isInitialMessage: true)
+                
+                // TODO: - 1. chatRoom이 업데이트 될때 참가자들의 Ticket들 불러오기
+                self.fetchChatRoomInfoUseCase.fetchParticipantTickets(self.chatRoomID)
+                    .subscribe(onNext: { ticketList in
+                        print(">>>>>", ticketList)
+                        // TODO: - Ticket created Date 알아내기
+                    })
+                    .disposed(by: self.disposeBag)
+                
             }).disposed(by: self.disposeBag)
     }
     
