@@ -65,6 +65,7 @@ final class ChatViewController: UIViewController {
         self.addSubviews()
         self.configureChatInputAccessoryView()
         self.configureChatCollectionView()
+        self.configureNavigation()
         self.bind()
         self.chatInputAccessoryView.messageInputTextField.delegate = self
         
@@ -73,9 +74,8 @@ final class ChatViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardHandler(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         // 제스처
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard(_:)))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         self.chatCollectionView.addGestureRecognizer(tapGesture)
-        self.configureNavigation()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -85,10 +85,16 @@ final class ChatViewController: UIViewController {
     
     private func configureNavigation() {
         self.navigationController?.navigationBar.tintColor = .label
-        let dropButton: UIBarButtonItem = .init(image: UIImage(systemName: "rectangle.portrait.and.arrow.right"), style: .plain, target: nil, action: nil)
+        let dropButton: UIBarButtonItem = .init(
+            image: UIImage(systemName: "rectangle.portrait.and.arrow.right"),
+            style: .plain,
+            target: nil,
+            action: nil
+        )
         self.navigationItem.rightBarButtonItem = dropButton
         dropButton.rx.tap
             .subscribe { [weak self] _ in
+                self?.hideKeyboard()
                 self?.viewModel.dropRoom()
             }
             .disposed(by: self.disposeBag)
@@ -279,7 +285,7 @@ private extension ChatViewController {
     }
     
     @objc
-    func hideKeyboard(_ sender: Any) {
+    func hideKeyboard() {
         view.endEditing(true)
         
         self.chatInputAccessoryView.snp.remakeConstraints { make in
