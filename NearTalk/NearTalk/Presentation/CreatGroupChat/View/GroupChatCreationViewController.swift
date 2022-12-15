@@ -15,7 +15,7 @@ import UIKit
 final class CreateGroupChatViewController: PhotoImagePickerViewController {
     
     // MARK: - Proporties
-    private let pickerComponentList: [Int] = Array((10...100))
+    private let pickerComponentList: [Int] = Array((4...10))
     private let viewModel: CreateGroupChatViewModel
     private let disposeBag: DisposeBag = DisposeBag()
     
@@ -43,17 +43,19 @@ final class CreateGroupChatViewController: PhotoImagePickerViewController {
     }
 
     private lazy var titleTextField: UITextField = UITextField().then {
-        $0.backgroundColor = .separator
         $0.attributedPlaceholder = NSAttributedString(string: "채팅방 제목을 입력해주세요.",
-                                                      attributes: [ NSAttributedString.Key.foregroundColor: UIColor.label ?? .white ])
+                                                      attributes: [ NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel ?? .white ])
+        $0.backgroundColor = .secondaryBackground
         $0.borderStyle = .roundedRect
+        $0.layer.borderColor = UIColor.secondaryLabel?.cgColor
     }
 
     private lazy var descriptionTextField: UITextField = UITextField().then {
-        $0.backgroundColor = .separator
         $0.attributedPlaceholder = NSAttributedString(string: "채팅방 상세설명을 입력해주세요.",
-                                                      attributes: [ NSAttributedString.Key.foregroundColor: UIColor.label ?? .white ])
+                                                      attributes: [ NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel ?? .white ])
+        $0.backgroundColor = .secondaryBackground
         $0.borderStyle = .roundedRect
+        $0.layer.borderColor = UIColor.secondaryLabel?.cgColor
     }
     
     private lazy var pickerLabel: UILabel = UILabel().then {
@@ -272,6 +274,7 @@ private extension CreateGroupChatViewController {
     }
 }
 
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 extension CreateGroupChatViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1

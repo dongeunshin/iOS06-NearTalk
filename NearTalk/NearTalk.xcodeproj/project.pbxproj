@@ -131,6 +131,8 @@
 		604360372941F07400E5D257 /* AccessibleChatRoomsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16988881292F550500CEC7B9 /* AccessibleChatRoomsRepository.swift */; };
 		604360382941F07A00E5D257 /* DefaultAccessibleChatRoomsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1698887F292F54E400CEC7B9 /* DefaultAccessibleChatRoomsRepository.swift */; };
 		605715A62920AA19004A0904 /* LaunchScreenDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605715A52920AA19004A0904 /* LaunchScreenDIContainer.swift */; };
+		606F6197294968EF00A33756 /* ShowQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606F6196294968EF00A33756 /* ShowQRViewController.swift */; };
+		606F619929496D0D00A33756 /* CaptureQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606F619829496D0D00A33756 /* CaptureQRViewController.swift */; };
 		6073A3AE2928AE9800D51CFD /* Codable+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6073A3AD2928AE9800D51CFD /* Codable+Dictionary.swift */; };
 		608BD10E292F709B00CB676E /* FCMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608BD10D292F709B00CB676E /* FCMService.swift */; };
 		608BD111292FD59700CB676E /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608BD110292FD59700CB676E /* Environment.swift */; };
@@ -218,6 +220,7 @@
 		833062292924A3D7000E786E /* OnboardingDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833062282924A3D7000E786E /* OnboardingDIContainer.swift */; };
 		8330622B2924A3E2000E786E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8330622F2924A402000E786E /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8330622E2924A402000E786E /* String+Regex.swift */; };
+		833D035629496E720029DF76 /* DropChatRoomUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833D035529496E720029DF76 /* DropChatRoomUseCase.swift */; };
 		83649765292D33B60002DDE5 /* AppSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E7BBC62922AFED007C390A /* AppSettingViewController.swift */; };
 		83649766292D33B90002DDE5 /* AppSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E7BBC52922AFED007C390A /* AppSettingTableViewCell.swift */; };
 		83649769292D393C0002DDE5 /* AppSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83649768292D393C0002DDE5 /* AppSettingViewModel.swift */; };
@@ -419,6 +422,8 @@
 		603FD39B292B4F4A00687ED4 /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
 		604360342941F00000E5D257 /* AccessibleChatRoomsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibleChatRoomsRepositoryTests.swift; sourceTree = "<group>"; };
 		605715A52920AA19004A0904 /* LaunchScreenDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenDIContainer.swift; sourceTree = "<group>"; };
+		606F6196294968EF00A33756 /* ShowQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowQRViewController.swift; sourceTree = "<group>"; };
+		606F619829496D0D00A33756 /* CaptureQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureQRViewController.swift; sourceTree = "<group>"; };
 		6073A3AD2928AE9800D51CFD /* Codable+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Dictionary.swift"; sourceTree = "<group>"; };
 		608BD10D292F709B00CB676E /* FCMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMService.swift; sourceTree = "<group>"; };
 		608BD110292FD59700CB676E /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -429,7 +434,6 @@
 		609B46E0293B06C70021E8FA /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		609E27152944A00B00F4BDE4 /* CoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		60C2A788291F3FE000F7D284 /* LaunchScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCoordinator.swift; sourceTree = "<group>"; };
-		60DA6309293D20A1003CA3E5 /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		60DCAAF32928B9610087A63D /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		60E749DB292C88F40048F877 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		60FB892B2940EDD500E9E4E5 /* RealtimeDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeDBTests.swift; sourceTree = "<group>"; };
@@ -448,7 +452,6 @@
 		7C254DB2292DDAAF004D4CEC /* ChatCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinator.swift; sourceTree = "<group>"; };
 		7C254DB4292DDABE004D4CEC /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		7C43C1EE2935F810008322FC /* UserDefaultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultUseCase.swift; sourceTree = "<group>"; };
-		7C4895352931FBE300DD5076 /* config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = config.xcconfig; sourceTree = "<group>"; };
 		7C522E1E2935BE0100331EB6 /* FetchChatRoomInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChatRoomInfoUseCase.swift; sourceTree = "<group>"; };
 		7C6684AD2924BC9E00A5E10A /* ProfileDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewModel.swift; sourceTree = "<group>"; };
 		7C749850292F706F00FADA94 /* MessagingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingUseCase.swift; sourceTree = "<group>"; };
@@ -483,6 +486,7 @@
 		833062252924A3BF000E786E /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		833062282924A3D7000E786E /* OnboardingDIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingDIContainer.swift; sourceTree = "<group>"; };
 		8330622E2924A402000E786E /* String+Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Regex.swift"; sourceTree = "<group>"; };
+		833D035529496E720029DF76 /* DropChatRoomUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropChatRoomUseCase.swift; sourceTree = "<group>"; };
 		83649768292D393C0002DDE5 /* AppSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingViewModel.swift; sourceTree = "<group>"; };
 		8364976C292D3C920002DDE5 /* DummyProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyProfileRepository.swift; sourceTree = "<group>"; };
 		83649770292DE1B50002DDE5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -714,7 +718,6 @@
 				1660D24A291DDB3A005F7B24 /* NearTalkUITests */,
 				1660D225291DDB37005F7B24 /* Products */,
 				EF9BC89A864970D54CE8E69D /* Pods */,
-				7C43C1F229361920008322FC /* Recovered References */,
 				2461FCD4A34405BB5DEC161C /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -994,6 +997,8 @@
 			children = (
 				555A6B2A29236D51001336ED /* FriendListCell.swift */,
 				555A6B2C29236D61001336ED /* FriendViewController.swift */,
+				606F6196294968EF00A33756 /* ShowQRViewController.swift */,
+				606F619829496D0D00A33756 /* CaptureQRViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1242,6 +1247,7 @@
 				7C522E1E2935BE0100331EB6 /* FetchChatRoomInfoUseCase.swift */,
 				7C749850292F706F00FADA94 /* MessagingUseCase.swift */,
 				7C8197432939E79700A7DD8F /* EnterChatRoomUseCase.swift */,
+				833D035529496E720029DF76 /* DropChatRoomUseCase.swift */,
 				7C254DA9292DB22B004D4CEC /* Coordinator */,
 				7C254DA8292DB21E004D4CEC /* ViewModel */,
 				7C254DA7292DB217004D4CEC /* View */,
@@ -1274,15 +1280,6 @@
 				7C254DB2292DDAAF004D4CEC /* ChatCoordinator.swift */,
 			);
 			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		7C43C1F229361920008322FC /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				7C4895352931FBE300DD5076 /* config.xcconfig */,
-				60DA6309293D20A1003CA3E5 /* CoreDataTests.swift */,
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		7C6684AC2924BC7E00A5E10A /* ViewModel */ = {
@@ -1911,11 +1908,13 @@
 				6001DA90292DBF770062EAD0 /* DefaultMediaRepository.swift in Sources */,
 				60FD706A2924080A00A4C29A /* ChatMessage.swift in Sources */,
 				555A6B2F29236D73001336ED /* FriendListViewModel.swift in Sources */,
+				606F6197294968EF00A33756 /* ShowQRViewController.swift in Sources */,
 				609B46E1293B06C70021E8FA /* CoreDataService.swift in Sources */,
 				162B1B6C2935176D004724D9 /* NCMapRegion.swift in Sources */,
 				16530578291E18560026B815 /* UIViewPreview.swift in Sources */,
 				833062292924A3D7000E786E /* OnboardingDIContainer.swift in Sources */,
 				603FD39A292B4F0F00687ED4 /* VerifyUserUseCase.swift in Sources */,
+				606F619929496D0D00A33756 /* CaptureQRViewController.swift in Sources */,
 				83EE7981293FB8290008D859 /* PhotoImagePickerViewController.swift in Sources */,
 				603FD38C2929290C00687ED4 /* FirebaseQueryDTO.swift in Sources */,
 				60C2A789291F3FE000F7D284 /* LaunchScreenCoordinator.swift in Sources */,
@@ -1927,6 +1926,7 @@
 				7CF4A735294979900065BF2D /* CDChatMessage+CoreDataClass.swift in Sources */,
 				830897DA292CC1E60090EC18 /* NecessaryProfileComponent.swift in Sources */,
 				7CA4EA38292BA65000D8C757 /* FetchProfileUseCase.swift in Sources */,
+				833D035629496E720029DF76 /* DropChatRoomUseCase.swift in Sources */,
 				1648BAAD292385CD0076AC35 /* ChatRoomAnnotation.swift in Sources */,
 				162B1B682933E036004724D9 /* RxMapViewReactiveDataSource.swift in Sources */,
 				16988882292F550500CEC7B9 /* AccessibleChatRoomsRepository.swift in Sources */,
@@ -2223,11 +2223,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NearTalk/NearTalk.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 92NGUT4BRA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/watchOS",
@@ -2237,7 +2235,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NearTalk/Resource/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "근방톡";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "메인지도 권한 요쳥";
+				INFOPLIST_KEY_NSCameraUsageDescription = "친구 추가하기 위해 카메라를 사용합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "NearTalk의 지도 사용을 위한 권한요청입니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "NearTalk의 지도 사용을 위한 권한요청입니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "NearTalk의 사용 중 지도 사용을 위한 권한요청입니다.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 권한 요청입니다";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -2256,7 +2257,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.codershigh.boostcamp.NearTalk.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = neartalk;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -2275,11 +2275,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = NearTalk/NearTalk.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 92NGUT4BRA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/watchOS",
@@ -2289,7 +2287,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NearTalk/Resource/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "근방톡";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "메인지도 권한 요쳥";
+				INFOPLIST_KEY_NSCameraUsageDescription = "친구 추가하기 위해 카메라를 사용합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "NearTalk의 지도 사용을 위한 권한요청입니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "NearTalk의 지도 사용을 위한 권한요청입니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "NearTalk의 사용 중 지도 사용을 위한 권한요청입니다.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진 권한 요청입니다";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -2308,7 +2309,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.codershigh.boostcamp.NearTalk.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = neartalk;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

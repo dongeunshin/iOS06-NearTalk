@@ -8,7 +8,6 @@
 import CoreLocation
 import Kingfisher
 import MapKit
-import Kingfisher
 import RxCocoa
 import RxSwift
 import SnapKit
@@ -72,10 +71,10 @@ final class MainMapViewController: UIViewController {
         }
         
         let imageConfig = UIImage.SymbolConfiguration(pointSize: 40)
-        let normalImage = UIImage(systemName: "message.badge.circle")?
+        let normalImage = UIImage(systemName: "message.circle")?
             .withTintColor(normalColor, renderingMode: .alwaysOriginal)
             .withConfiguration(imageConfig)
-        let highlightImage = UIImage(systemName: "message.badge.circle")?
+        let highlightImage = UIImage(systemName: "message.circle")?
             .withTintColor(highlightedColor, renderingMode: .alwaysOriginal)
             .withConfiguration(imageConfig)
         
@@ -115,6 +114,7 @@ final class MainMapViewController: UIViewController {
             self.fetch(path: profileImagePath)
         }
         
+        self.locationManagerDidChangeAuthorization(self.locationManager)
         self.locationManager.startUpdatingLocation()
     }
     
@@ -326,15 +326,16 @@ final class MainMapViewController: UIViewController {
         let geocoder = CLGeocoder()
         let locale = Locale(identifier: "Ko-kr")
         geocoder.reverseGeocodeLocation(userLocation, preferredLocale: locale) { [weak self] (placeMarks, _) in
-            guard let placeMarks = placeMarks,
-                  let city = placeMarks.last?.locality,
-                  let dong = placeMarks.last?.subLocality,
-                  let name = placeMarks.last?.name
+            guard let placeMark = placeMarks?.last
             else {
                 return
             }
             
-            self?.userLocationLabel.text = "\(city) \(dong) \(name)"
+            let city = placeMark.locality ?? ""
+            let dong = placeMark.subLocality ?? ""
+            let name = placeMark.name ?? ""
+            
+            self?.userLocationLabel.text = "\(city) \(dong) \(name)".trimmingCharacters(in: .whitespacesAndNewlines)
         }
     }
 }
@@ -344,6 +345,7 @@ extension MainMapViewController: MKMapViewDelegate {
         if annotation is MKUserLocation {
             let userLocationView = MKUserLocationView(annotation: annotation, reuseIdentifier: nil)
             userLocationView.canShowCallout = false
+            userLocationView.isEnabled = false
             userLocationView.tintColor = .tertiaryColor
 
             return userLocationView
@@ -393,14 +395,13 @@ extension MainMapViewController: MKMapViewDelegate {
 extension MainMapViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
-        case .notDetermined:
+        case .notDetermined, .restricted, .denied:
             manager.requestWhenInUseAuthorization()
-        case .authorizedAlways, .authorizedWhenInUse:
+        case .authorizedWhenInUse, .authorizedAlways:
+            manager.desiredAccuracy = kCLLocationAccuracyBest
             manager.startUpdatingLocation()
-        case .restricted, .denied:
+        default:
             manager.requestWhenInUseAuthorization()
-        @unknown default:
-            return
         }
     }
 }
