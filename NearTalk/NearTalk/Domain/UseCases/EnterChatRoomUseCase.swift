@@ -66,12 +66,6 @@ final class DefaultEnterChatRoomUseCase: EnterChatRoomUseCase {
             }
     }
     
-//    func fetchSingleUserChatRoomTickets(userIDList: [String], chatRoomID: String) -> Single<[UserChatRoomTicket]> {
-//        var userChatRoomTicketList: [UserChatRoomTicket] = []
-//
-//        return self.fetchSingleUserChatRoomTickets(userIDList: <#T##[String]#>, chatRoomID: <#T##String#>)
-//    }
-    
     func fetchSingleUserChatRoomTickets(userIDList: String, chatRoomID: String) -> Single<UserChatRoomTicket> {
         self.chatRoomListRepository.fetchUserChatRoomTicket(userIDList, chatRoomID)
     }
