@@ -6,8 +6,8 @@
 //
 
 import AVFoundation
-import UIKit
 import RxSwift
+import UIKit
 
 class QRCodeReaderViewController: UIViewController {
     private let captureSession = AVCaptureSession()

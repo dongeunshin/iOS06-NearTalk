@@ -457,19 +457,32 @@ extension DefaultChatViewModel {
                 ticketList.forEach { [weak self] ticket in
                     guard let self,
                           let ticketID = ticket.uuid,
-                        let lastReadMessageID = ticket.lastReadMessageID
+                          let lastReadMessageID = ticket.lastReadMessageID
                     else {
                         return
                     }
                     
-                    self.messagingUseCase.fetchSingleMessage(messageID: lastReadMessageID, roomID: self.chatRoomID)
-                        .subscribe(onSuccess: { chatMessage in
-                            self.lastUpdatedTimeOfTickets[ticketID] = chatMessage.createdAtTimeStamp
-                            self.lastUpdatedTimeOfTicketsRelay.accept(self.lastUpdatedTimeOfTickets)
-                        })
-                        .disposed(by: self.disposeBag)
+                    guard let lastUpdatedTimeStamp = ticket.lastUpdatedTimeStamp
+                    else {
+                        self.fetchLastUpdatedTimeOfTicket(
+                            ticketID: ticketID,
+                            lastReadMessageID: lastReadMessageID
+                        )
+                        return
+                    }
                     
+                    self.lastUpdatedTimeOfTickets[ticketID] = lastUpdatedTimeStamp
+                    self.lastUpdatedTimeOfTicketsRelay.accept(self.lastUpdatedTimeOfTickets)
                 }
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    func fetchLastUpdatedTimeOfTicket(ticketID: String, lastReadMessageID: String) {
+        self.messagingUseCase.fetchSingleMessage(messageID: lastReadMessageID, roomID: self.chatRoomID)
+            .subscribe(onSuccess: { chatMessage in
+                self.lastUpdatedTimeOfTickets[ticketID] = chatMessage.createdAtTimeStamp
+                self.lastUpdatedTimeOfTicketsRelay.accept(self.lastUpdatedTimeOfTickets)
             })
             .disposed(by: self.disposeBag)
     }

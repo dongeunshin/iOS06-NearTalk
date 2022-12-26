@@ -16,7 +16,6 @@ protocol EnterChatRoomUseCase {
     func configureUserChatRoomTicket(userID: String, chatRoom: ChatRoom) -> Single<UserChatRoomTicket>
     
     /// 모든 참가자의 티켓 가져오기
-//    func fetchSingleUserChatRoomTickets(userIDList: [String], chatRoomID: String) -> Single<[UserChatRoomTicket]>
     func fetchSingleUserChatRoomTickets(userIDList: String, chatRoomID: String) -> Single<UserChatRoomTicket>
 }
 
@@ -44,7 +43,7 @@ final class DefaultEnterChatRoomUseCase: EnterChatRoomUseCase {
     func configureUserChatRoomTicket(userID: String, chatRoom: ChatRoom) -> Single<UserChatRoomTicket> {
         guard let roomID = chatRoom.uuid
         else {
-            return .error(EnterChatRoomUseCaseError.faildToEnter)
+            return .error(EnterChatRoomUseCaseError.failedToEnter)
         }
         
         return self.fetchUserChatRoomTicket(roomID: roomID)
@@ -60,7 +59,8 @@ final class DefaultEnterChatRoomUseCase: EnterChatRoomUseCase {
                     userID: userID,
                     roomID: roomID,
                     lastReadMessageID: chatRoom.recentMessageID,
-                    lastRoomMessageCount: chatRoom.messageCount
+                    lastRoomMessageCount: chatRoom.messageCount,
+                    lastUpdatedTimeStamp: Date().timeIntervalSince1970
                 )
                 return self.createUserChatRoomTicket(ticket: userChatRoomTicket)
             }
@@ -81,6 +81,6 @@ final class DefaultEnterChatRoomUseCase: EnterChatRoomUseCase {
 }
 
 enum EnterChatRoomUseCaseError: Error {
-    case faildToEnter
+    case failedToEnter
     case failedToFetchUserTicket
 }

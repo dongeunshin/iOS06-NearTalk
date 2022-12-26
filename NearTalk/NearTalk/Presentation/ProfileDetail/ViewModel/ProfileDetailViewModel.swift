@@ -190,7 +190,6 @@ final class ProfileDetailViewModel: ProfileDetailViewModelable {
             .disposed(by: self.disposeBag)
     }
     
-    
     private func createFriendChatRoomTicket(ticket: UserChatRoomTicket, friendID: String) {
         self.fetchChatRoomUseCase.createFriendChatRoomTicket(ticket: ticket, friendID: friendID)
             .subscribe(onSuccess: { _ in
